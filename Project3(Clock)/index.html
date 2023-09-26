@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Java Script Clock</title>
+    <style>
+        /* *
+        {
+            margin: 0;
+            padding: 0;
+        } */
+        nav {
+            background-color: rgb(48, 74, 74);
+            color: rgb(227, 240, 236);
+        }
+
+        ul {
+            display: inline-flex;
+        }
+
+        li {
+            margin: 0px 23px;
+        }
+
+        .container {
+            background-color: aquamarine;
+            color: black;
+            height: 500px;
+            width: 700px;
+            margin: 5px auto;
+            padding: 15px;
+
+        }
+
+        button {
+            font-weight: bold;
+            padding: 3px;
+            border-radius: 4px;
+            background-color: rgb(48, 182, 223);
+            color: rgb(29, 44, 39)
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <div class="container">
+
+
+            <div class="samaya">
+                <h1>The Current Time : <br><br>
+                    <div id="time"></div>
+                </h1>
+
+            </div>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat alias excepturi expedita, minima
+                laboriosam nostrum natus repellendus magnam architecto commodi veritatis sed vero iusto vel molestias
+                officia? Voluptate earum molestias illum quae, eaque saepe!</p><br><br>
+
+            <p>Lorem ipsum dolor sit amet.</p><br><br>
+
+            <button>Browse Time</button>
+        </div>
+    </header>
+
+    <section></section>
+
+    <footer></footer>
+
+
+    <script>
+        let a;
+        let date;
+        let time;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+        setInterval(() => {
+
+
+            a = new Date();
+
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() + "hrs : " + a.getMinutes() + " mins : " + a.getSeconds() + " secs.";
+            document.getElementById("time").innerHTML = time + "<br> on " + date;
+
+        }, 1000);
+    </script>
+</body>
+
+</html>
